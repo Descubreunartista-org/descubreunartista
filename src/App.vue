@@ -1,24 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav id="nav">
+      <h1>Ayuda a un artista</h1>
+      <router-link
+          to="/newArtist">
+        <md-button @click="goTo('newArtist')" class="md-raised md-primary">Soy un artista</md-button>
+      </router-link>
+    </nav>
     <router-view/>
   </div>
 </template>
 
 <style>
+body, html{
+  padding: 0px;
+  margin: 0px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #fff;
 }
-
-#nav {
-  padding: 30px;
+h1, p{
+  margin: 0px;
+  padding: 0px;
+}
+nav {
+  width: 100%;
+  background: #0A0F0D;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav h1{
+  margin: 0px;
+  font-size: 1rem;
 }
 
 #nav a {
@@ -29,4 +46,9 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+.md-primary {
+    background: blue !important;
+    color: #fff;
+  }
 </style>
+<script>
