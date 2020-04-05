@@ -25,5 +25,10 @@ yarn run test
 yarn run lint
 ```
 
+### To create a commit using commitizen
+```
+yarn commit
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
