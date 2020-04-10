@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="292" height="34" viewBox="0 0 292 34">
+    <g fill="none" fill-rule="evenodd" transform="translate(2 1)">
+        <text fill="#161616" font-family="Helvetica" font-size="24" letter-spacing="-1.2">
+            <tspan x="60" y="27">DESCUBREUNARTISTA</tspan>
+        </text>
+        <path stroke="#161616" stroke-linejoin="round" stroke-width="2" d="M6 0H38V32H6z"/>
+        <path stroke="#161616" stroke-width="2" d="M0 16C3.59 8.953 12.088 4 22 4c9.911 0 18.41 4.953 22 12-3.59 7.047-12.089 12-22 12-9.912 0-18.41-4.953-22-12z"/>
+        <circle cx="22" cy="16" r="5" fill="#161616"/>
+    </g>
+</svg>

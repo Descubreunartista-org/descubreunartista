@@ -16,14 +16,24 @@ body, html{
   padding: 0px;
   margin: 0px;
 }
+:root{
+  --aqua--green--color: #A4DCC8;
+  --pink-color: #F299A9;
+  --blue-color: #9FD2DC;
+  --purple-color: #D6C8F4;
+  --orange-color: #FFC2B2;
+  --text-color: #000;
+  --font-size-title: 64px;
+  --font-size-text: 24px;
+  --font-size-subtitles: 12px;
+  --font-size-card-title: 20px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #fff;
 }
-h1, p{
-  margin: 0px;
-  padding: 0px;
-}
+
 nav {
   width: 100%;
   background: #0A0F0D;
@@ -46,9 +56,6 @@ nav h1{
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-.md-primary {
-    background: blue !important;
-    color: #fff;
-  }
+
 </style>
 <script>

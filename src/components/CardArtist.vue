@@ -1,31 +1,28 @@
 <template>
-  <md-card>
-    <md-card-media-cover md-solid>
-      <md-card-media md-ratio="1:1">
-        <img src="https://via.placeholder.com/300.png/09f/fff" alt="Skyscraper" />
-      </md-card-media>
-
-      <md-card-area>
-        <md-card-header>
-          <span class="md-title">{{name}}</span>
-          <span class="md-subhead">{{descritpion}}</span>
-        </md-card-header>
-
-        <md-card-actions>
-          <md-button class="md-icon-button">
-            <md-icon class="fa youtube">play_circle_filled</md-icon>
-          </md-button>
-
-          <md-button class="md-icon-button">
-            <md-icon>share</md-icon>
-          </md-button>
-          <md-button class="md-icon-button">
-            <md-icon>language</md-icon>
-          </md-button>
-        </md-card-actions>
-      </md-card-area>
-    </md-card-media-cover>
-  </md-card>
+<div class="artist-card">
+  <img src="../assets/placeholder.png" alt="">
+  <div class="artist-info">
+    <h1>Nombre del artista</h1>
+    <p>Categoria artistica</p>
+    <div class="social-icons">
+      <a href="">
+        <img src="../assets/insta.svg" alt="">
+      </a>
+      <a href="">
+        <img src="../assets/twitter.svg" alt="">
+      </a>
+      <a href="">
+        <img src="../assets/youtube.svg" alt="">
+      </a>
+      <a href="">
+        <img src="../assets/patreon.svg" alt="">
+      </a>
+    </div>
+    <div class="footer">
+      <a href="">CONOCE MAS DEL ARTISTA >>></a>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -41,10 +38,45 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .md-card {
-    width: 320px;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
+  .artist-card{
+    border-radius: 15px;
+    height: 460px;
+    box-shadow: 5px 10px 8px #EEEEEE;
+  }
+  .artist-info{
+    margin-top:2rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .artist-info h1{
+      font-size: var(--font-size-card-title);
+      margin-bottom: 0;
+      padding-bottom: 0;
+  }
+  .artist-info p{
+      font-size: var(--font-size-subtitles);
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+  }
+  .social-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+  .footer{
+    margin-top: 2rem;
+    padding: 0 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #EEEEEE;
+    font-size: var(--font-size-subtitles);    
+  }
+  .footer a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 300;
   }
 </style>

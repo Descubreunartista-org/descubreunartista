@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>patreon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00_home" transform="translate(-830.000000, -1927.000000)" fill="#161616" fill-rule="nonzero">
+            <g id="CARDS" transform="translate(100.000000, 1600.000000)">
+                <g id="Card-Copy" transform="translate(426.000000, 0.000000)">
+                    <g id="RRSS" transform="translate(53.000000, 316.000000)">
+                        <g id="patreon" transform="translate(240.000000, 0.000000)">
+                            <g transform="translate(11.177785, 11.444588)" id="Path">
+                                <polygon points="0 0.0260416667 3.51583333 0.0260416667 3.51583333 19.1927083 0 19.1927083"></polygon>
+                                <path d="M12.82,0.0260416667 C8.8475,0.0260416667 5.61666667,3.25354167 5.61666667,7.22020833 C5.61666667,11.1785417 8.8475,14.3952083 12.82,14.3952083 C16.7816667,14.3952083 20,11.174375 20,7.22020833 C20,3.254375 16.7808333,0.0260416667 12.82,0.0260416667 Z"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
