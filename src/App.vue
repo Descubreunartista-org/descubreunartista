@@ -30,7 +30,23 @@
       </div>
     </nav>
     <router-view/>
-    
+    <footer class="main-footer">
+      <div class="container">
+        <div class="content">
+          <picture>
+            <source>
+            <img src="./assets/logo-inverse.png" alt="">
+          </picture>
+          <nav class="nav-footer">
+            <ul class="list">
+              <li><a class="link" href="">MORE</a></li>
+              <li><a class="link" href="">MORE</a></li>
+              <li><a class="link" href="">MORE</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -178,7 +194,33 @@ nav {
   padding: 0 24px;
 }
 
-
+.main-footer {
+  background-color: #161616;
+  padding: 162px 0;
+  margin-top: 4px;
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: calc((100% - (100%/4)));
+    margin: 0 auto;
+  }
+  .nav-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .list {
+      display: flex;
+      .link {
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 300;
+        color: #ffffff;
+        margin-left: 40px;
+      }
+    }
+  }
+}
 
 </style>
 <script>
