@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 body, html{
   padding: 0px;
   margin: 0px;
@@ -48,9 +48,9 @@ body, html{
   --font-size-subtitles: 12px;
   --font-size-card-title: 20px;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
 }
 .light-button{
@@ -87,7 +87,7 @@ nav {
   width: 100%;
   background: transparent;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -110,10 +110,20 @@ nav h1{
 .links a{
   text-decoration: none;
   color: #000;
-  margin: 0.25rem 0;
+  margin-bottom: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
 }
 .links a:hover{
   color: var(--pink-color);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 24px;
 }
 
 </style>
