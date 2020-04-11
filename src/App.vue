@@ -167,7 +167,10 @@ nav {
   justify-content: space-between;
   align-items: flex-start;
 }
-
+.icon {
+  width: 32px;
+  height: 32px;
+}
 .links{
   display: flex;
   flex-direction: column;
