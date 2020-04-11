@@ -2,7 +2,11 @@
   <div id="app">
     <nav id="nav">
       <div class="logo">
-        <img src="./assets/logo.svg" alt="">
+        <picture>
+          <source>
+          <img src="./assets/logo.png" alt="">
+        </picture>
+        
       </div>
       <div class="links">
         <router-link
@@ -26,17 +30,72 @@
       </div>
     </nav>
     <router-view/>
+    
   </div>
 </template>
 
 <style lang="scss">
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 body, html{
   padding: 0px;
   margin: 0px;
 }
+
+* {
+  margin:0;
+  padding: 0;
+}
+
 :root{
   --aqua--green--color: #A4DCC8;
-  --pink-color: #F299A9;
+  --pink-color: #f299a9;
   --blue-color: #9FD2DC;
   --purple-color: #D6C8F4;
   --orange-color: #FFC2B2;
@@ -55,12 +114,12 @@ body, html{
 }
 .light-button{
   background: transparent;
-  border: 1px solid #EEEE;
+  border: 1px solid #fff;
   text-align: center;
   font-size: 16px;
   font-weight: 300;
-  color: #EEEE; 
-  padding: 1rem;
+  color: #fff; 
+  padding: 8px 36px;
   cursor: pointer;
 }
 .light-button:hover{
@@ -92,14 +151,7 @@ nav {
   justify-content: space-between;
   align-items: flex-start;
 }
-nav img{
-  height: 32px;
-  width: 312px;
-}
-nav h1{
-  margin: 0px;
-  font-size: 1rem;
-}
+
 .links{
   display: flex;
   flex-direction: column;
@@ -125,6 +177,8 @@ nav h1{
   box-sizing: content-box;
   padding: 0 24px;
 }
+
+
 
 </style>
 <script>
