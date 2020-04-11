@@ -14,7 +14,7 @@
         <router-link
           class="link"
           tag='a'
-          to="/newArtist">
+          to="/register">
           REGISTRO
         </router-link>
         <router-link
@@ -67,7 +67,17 @@ body, html{
   background: var(--pink-color);
   border: 1px solid var(--pink-color);
 }
-input{
+.light-input{
+  background: transparent;
+  height: 62px;
+  width: 280px;
+  outline: none;
+  border: 1px solid #EEEE;
+  font-size: var(--font-size-text);
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+}
+select{
   background: transparent;
   height: 62px;
   width: 280px;
@@ -77,6 +87,7 @@ input{
   margin: 0.5rem 0;
   padding: 0 1rem;
   color: #EEE;
+  appearance: none;
 }
 input::placeholder{
   font-size: var(--font-size-text);

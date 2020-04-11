@@ -16,7 +16,13 @@
         <h1>BLA BLA BLA BLA</h1>
         <div class="filters">
           <input placeholder="Nombre" type="text"/>
-          <input placeholder="categoria" type="text"/>
+          <select class="select-css">
+            <option>CATEGORIA</option>
+            <option>Apples</option>
+            <option>Bananas</option>
+            <option>Grapes</option>
+            <option>Oranges</option>
+          </select>
           <input placeholder="ordenar" type="text"/>
         </div>
       </div>
@@ -60,7 +66,6 @@ export default {
     querySnapshot.forEach((doc, index) => {
                 this.artistList.push(doc.data());
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
     });
 });
   }
@@ -108,13 +113,14 @@ export default {
   }
   .list{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     flex-direction: row;
     box-sizing: border-box;
     max-width: 1200px;
   }
   .cards-list .card{
-    margin: 0 1rem;
+    margin: 1rem;
   }
   .banner{
     padding: 2rem;
