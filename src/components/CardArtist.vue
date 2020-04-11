@@ -1,10 +1,14 @@
 <template>
-<div>
-<div v-if="name" class="artist-card">
-  <img src="../assets/placeholder.png" alt="">
-  <div class="artist-info">
-    <h1>{{name}}</h1>
-    <p>Categoria artistica</p>
+<li>
+<article v-if="name" class="artist-card">
+  <header class="image-container">
+    <img class="image" src="../assets/placeholder.png" alt="">
+    <div class="clip"></div>
+  </header>
+  
+  <div class="info">
+    <h3 class="name">{{name}}</h3>
+    <h4 class="category">Categoria artistica</h4>
     <div class="social-icons">
       <a class="insta"  href="">
         <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g fill="#000" fill-rule="nonzero"><path d="M15.125 0h-8.25A6.876 6.876 0 000 6.875v8.25A6.876 6.876 0 006.875 22h8.25A6.876 6.876 0 0022 15.125v-8.25A6.876 6.876 0 0015.125 0zm4.813 15.125a4.818 4.818 0 01-4.813 4.813h-8.25a4.818 4.818 0 01-4.813-4.813v-8.25a4.818 4.818 0 014.813-4.813h8.25a4.818 4.818 0 014.813 4.813v8.25z"/><path d="M11 5.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 8.938A3.442 3.442 0 017.562 11 3.441 3.441 0 0111 7.562 3.441 3.441 0 0114.438 11 3.442 3.442 0 0111 14.438z"/><circle cx="16.913" cy="5.088" r="1"/></g></svg>
@@ -19,23 +23,23 @@
         <svg width="21" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="#161616" fill-rule="nonzero"><path d="M.178.47h3.516v19.167H.178zM12.998.47c-3.973 0-7.204 3.228-7.204 7.195 0 3.958 3.231 7.175 7.204 7.175 3.961 0 7.18-3.221 7.18-7.175 0-3.966-3.22-7.194-7.18-7.194z"/></g></svg>
       </a>
     </div>
-    <div class="footer">
-      <a href="">CONOCE MAS DEL ARTISTA >>></a>
-    </div>
+    <footer class="footer">
+      <a class="link" href="">CONOCE MAS DEL ARTISTA >>></a>
+    </footer>
   </div>
-</div>
-<div v-else class="inscription artist-card">
+</article>
+<article v-else class="inscription artist-card">
   <div class="info">
-    <h1 class="small-title">
+    <h3 class="small-title">
       ¿Quieres unirte al resto de artistas?
-    </h1>
+    </h3>
     <p class="description">
       Rellena el formulario y empieza a formar parte de esta familia de artistas, date a conocer y comparte todo tu contenido.
     </p>
     <button class="light-button">INSCRIBIRME</button>
   </div>
-</div>
-</div>
+</article>
+</li>
 </template>
 
 <script>
@@ -50,69 +54,110 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1{
-  margin: 0;
-}
-  .artist-card{
-    border-radius: 18px;
-    width: 380px;
-    height: 100%;
-    max-height: 460px;
-    max-width: 380px;
-    box-shadow: 0px 10px 8px #EEEEEE;
-    background: #fff;
-  }
-  .artist-card img{
-    max-width: 380px;
-  }
-  .artist-card.inscription{
-    background-image: url(../assets/inscription.png);
-    display: flex;
-    align-items: flex-end;
-    box-sizing: border-box;
-    padding: 1rem;
-  }
+<style scoped lang="scss">
 
-  .artist-card.inscription .info{
-    color: #eeee;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .artist-card.inscription .info h1{
-    font-size: var(--font-size-card-title);
-  }
-  .artist-card.inscription .info .description{
-    font-size: var(--font-size-subtitles);
-  }
-  .artist-info{
-    margin-top:1rem;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .artist-info h1{
-      font-size: var(--font-size-card-title);
-      margin-bottom: 0;
-      padding-bottom: 0;
+  .artist-card {
+    border-radius: 18px;
+    height: 100%;
+    max-width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    background: #fff;
+    .image-container {
+      position: relative;
+      height: 216px;
+      .image {
+        width: 100%;
+      }
+      .clip {
+        border-radius: 18px 18px 0 0;
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+    }
+    .info {
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 24px 27px 24px;
+
+      .name {
+        font-size: var(--font-size-card-title);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .category {
+        font-size: var(--font-size-subtitles);
+        font-weight: 700;
+        line-height: 1.67;
+        margin-bottom: 32px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 36px;
+        margin-bottom: 48px;
+      }
+
+      .footer {
+        box-sizing: border-box;
+        border-top: 1px solid #EEEEEE;
+        font-size: var(--font-size-subtitles);
+        padding-top: 16px;
+        width: 100%;
+        text-align: center;
+        .link {
+          text-decoration: none;
+          color: #161616;
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 1.67;
+          &:hover {
+            color: var(--pink-color);
+          }
+        }
+      }
+    }
+    &.inscription{
+      background-image: url(../assets/inscription.png);
+      background-size: cover;
+      display: flex;
+      align-items: flex-end;
       box-sizing: border-box;
+      padding-left: 8px;
+      padding-right: 8px;
+      .info{
+        color: #eeee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 48px;
+        .small-title {
+          font-size: var(--font-size-card-title);
+          font-weight: 700;
+          line-height: 1;
+          margin-bottom: 8px;
+        }
+        .description {
+          font-size: var(--font-size-subtitles);
+          font-weight: 700;
+          line-height: 1.67;
+          margin-bottom: 24px;
+        }
+      }
+    }
   }
-  .artist-info p{
-      font-size: var(--font-size-subtitles);
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-  }
-  .social-icons{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    padding: 0 2rem;
-    box-sizing: border-box;
-  }
+  
   .insta{
     cursor: pointer;
   }
@@ -128,20 +173,5 @@ h1{
   .patreon:hover g{
     fill: #F4511E;
   }
-  .footer{
-    margin-top: 3rem;
-    padding: 0 2rem;
-    padding-top: 1rem;
-    box-sizing: border-box;
-    border-top: 1px solid #EEEEEE;
-    font-size: var(--font-size-subtitles);    
-  }
-  .footer a{
-    text-decoration: none;
-    color: #161616;
-    font-weight: 300;
-  }
-  .footer a:hover{
-    color: var(--pink-color);
-  }
+
 </style>
