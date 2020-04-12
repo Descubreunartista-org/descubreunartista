@@ -123,11 +123,168 @@ body, html{
   --font-size-subtitles: 12px;
   --font-size-card-title: 20px;
 }
+@import "vue-select/src/scss/vue-select.scss";
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 #app {
   font-family: 'Roboto', sans-serif;
   color: #fff;
 }
+
+.form-legend {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.67;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.input-text {
+  display: block;
+  border: solid 1px #161616;
+  width: 100%;
+  padding: 28px 16px 20px 16px;
+  font-size: var(--font-size-text);
+  font-weight: 300;
+  box-sizing: border-box;
+  &::placeholder{
+    font-size: var(--font-size-text);
+    color: #aaaaaa;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  &[type="email"] {
+    &::placeholder {
+      text-transform: none;
+    }
+  }
+  &:focus {
+    border: solid 1px #f299a9;
+    outline: none;
+  }
+}
+
+.text-area {
+  display: block;
+  border: solid 1px #161616;
+  width: 100%;
+  resize: none;
+  height: 216px;
+  padding: 28px 16px 20px 16px;
+  box-sizing: border-box;
+  &::placeholder{
+    font-size: var(--font-size-text);
+    color: #aaaaaa;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+.select-combo {
+  .vs__dropdown-toggle {
+    border-radius: 0px;
+    border: solid 1px #161616;
+    padding: 22px 16px 18px 16px;
+    &:focus-within {
+      border: solid 1px var(--pink-color);
+    }
+  }
+  .vs__search {
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-size-text);
+    font-weight: 300;
+    &::placeholder {
+      font-size: var(--font-size-text);
+      color: #aaaaaa;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    
+  }
+  .vs__selected {
+    font-size: var(--font-size-text);
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  .vs__selected-options {
+    padding: 0;
+  }
+  .vs__dropdown-menu {
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: $z-index;
+    padding: 4px 16px 24px 16px;
+    margin: 0;
+    width: 100%;
+    max-height: $max-height;
+    min-width: $min-width;
+    overflow-y: auto;
+    box-shadow: 0px 3px 6px 0px #fff;
+    border: 0;
+    border-top-style: none;
+    border-radius: 0;
+    text-align: left;
+    list-style: none;
+    background-color: #161616;
+  }
+  .vs__dropdown-option {
+    line-height: 1.42857143; /* Normalize line height */
+    display: block;
+    padding: 0;
+    clear: both;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    white-space: nowrap;
+    text-transform: uppercase;
+    background-color: #161616; 
+    margin-top: 20px;
+    &:hover {
+      cursor: pointer;
+      background-color: #161616;
+      color: var(--pink-color);
+    }
+  }
+} 
+.input-info {
+  font-size: 12px;
+  font-weight: 300;
+}
+.btn-add-container {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  .btn {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+}
+.btn {
+  border: 0;
+  background: transparent;
+}
+.btn-primary {
+  background-color: #161616;
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 24px;
+}
+
+
 .light-button{
   background: transparent;
   border: 1px solid #fff;
@@ -164,11 +321,7 @@ select{
   color: #EEE;
   appearance: none;
 }
-input::placeholder{
-  font-size: var(--font-size-text);
-  color: #ffff;
-  font-weight: 300;
-}
+
 nav {
   width: 100%;
   background: transparent;
@@ -203,6 +356,14 @@ nav {
   margin: 0 auto;
   box-sizing: content-box;
   padding: 0 24px;
+}
+
+.content-6 {
+  max-width: 50%;
+}
+
+.centered {
+  margin: 0 auto;
 }
 
 .main-footer {
