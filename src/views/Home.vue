@@ -1,10 +1,13 @@
 <template>
   <div class="home">
-    <section class="banner">
-      <div class="title">
-        <h1>DESCUBRE</h1>
-        <h1>UNA</h1>
-        <h1>ARTISTA</h1>
+    <section class="hero container">
+      <picture class="image">
+        <source>
+        <img src="./../assets/gallo.png" alt="">
+      </picture>
+      
+      <div>
+        <h1 class="title"><span class="line">descubre</span> <span class="line">un<span class="decorate">a</span></span> <span class="line">artista</span></h1>
         <p class="description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus purus velit, a suscipit enim condimentum et. Donec ornare quis dui non porta. Duis venenatis maximus varius. Sed ac arcu mattis, gravida lorem eget, facilisis purus. Praesent sodales laoreet laoreet. Cras posuere ultricies turpis, sed congue ex. Suspendisse sapien quam posuere eget accumsan eget, fermentum sed eros. Pellentesque iaculis nisi a mollis venenatis. Suspendisse sapien quam, posuere eget accumsan eget, fermentum sed eros. Pellentesque iaculis nisi a mollis venenatis.
         </p>
@@ -12,22 +15,19 @@
 
     </section>
     <section class="artists">
-      <div class="form">
-        <h1>BLA BLA BLA BLA</h1>
-        <div class="filters">
-          <input placeholder="Nombre" type="text"/>
-          <select class="select-css">
-            <option>CATEGORIA</option>
-            <option>Apples</option>
-            <option>Bananas</option>
-            <option>Grapes</option>
-            <option>Oranges</option>
-          </select>
-          <input placeholder="ordenar" type="text"/>
-        </div>
+      <div class="artist-filters">
+      <h2 class="title">BLA BLA BLA BLA</h2>
+        <form class="form container">
+          <div class="filters">
+            <input placeholder="Nombre" type="text"/>
+            <input placeholder="categoria" type="text"/>
+            <input placeholder="ordenar" type="text"/>
+          </div>
+        </form>
       </div>
-      <div class="cards-list">
-        <div class="list">
+      
+      <div class="cards-list container">
+        <ul class="list">
           <card-artist
             class="card"
             v-for="artist in artistList"
@@ -40,7 +40,7 @@
           <card-artist
             class="card">
           </card-artist>
-        </div>
+        </ul>
       </div>
     </section>
   </div>
@@ -72,70 +72,92 @@ export default {
 
 };
 </script>
-<style scoped>
-  h1{
-    margin:0;
-    padding: 0;
+<style lang="scss" scoped>
+  .hero{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #000;
+    padding-top: 165px;
+    padding-bottom: 260px;
+    .image {
+      position: absolute;
+      z-index: -1;
+      top: -180px;
+      right: 140px;
+    }
+    .title {
+      max-width: 60%;
+      margin-bottom: 48px;
+      .line {
+        font-size: 132px;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        line-height: 0.82;
+        display: flex;
+        text-transform: uppercase;
+        color: #000;
+        .decorate {
+          max-height: 94px;
+          background-color: #000;
+          color: #fff;
+          width: 100%;
+          line-height: 0.75;
+          margin-top: 4px;
+        }
+      }
+    }
+    .description{
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.33;
+      max-width: 60%;
+    }
   }
   .artists{
-    position: relative;
-    background: var(--pink-color);
-    height: 540px;
+    
     color: #161616;
-    margin: 0 auto;
+    
+    .title {
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 1;
+      text-align: center;
+    }
+    .artist-filters {
+      background: var(--pink-color);
+      padding-top: 64px;
+      padding-bottom: 168px;
+    }
+    .form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding-top: 82px;
+      padding-bottom: 90px;
+
+      .filters{
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
+    }
+    .cards-list {
+      position: relative;
+      top: -168px;
+      .list {
+        display: flex;
+        justify-content: space-between;
+        .card {
+          width: calc((100%/3) - 20px);
+          flex: 0 0 calc((100%/3) - 20px);
+        }
+      }
+    }
   }
-  .artists .form h1{
-    font-size: var(--font-size-title);
-    font-weight: 500;
-  }
-  .artists .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 3rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .artists .form .filters{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 3rem 0;
-    max-width: 1000px;
-  }
-  .cards-list{
-    display: flex;
-    padding: 2rem;
-    position: absolute;
-    width: 100%;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-  .list{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    flex-direction: row;
-    box-sizing: border-box;
-    max-width: 1200px;
-  }
-  .cards-list .card{
-    margin: 1rem;
-  }
-  .banner{
-    padding: 2rem;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .banner .title{
-    font-size: var(--font-size-big-title);
-    max-width: 1200px;
-    width: 100%;
-  }
-  .description{
-    font-size: var(--font-size-text);
-    max-width: 800px;
-  }
+
+  
+  
 </style>
