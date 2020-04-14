@@ -5,7 +5,7 @@
       <div v-show="step === 1">
         <form class="form-step" action>
           <fielset>
-            <legend class="form-legend">Email</legend>
+            <legend class="form-legend">Datos personales</legend>
             <label class="input-label" for="email">Email</label>
             <input id="email" class="input-text" placeholder="tuemail@email.com" type="email" />
             <label class="input-label" for="pass">Contraseña</label>
