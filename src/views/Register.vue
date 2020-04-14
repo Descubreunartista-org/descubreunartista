@@ -13,8 +13,10 @@
             <p class="input-info">Tu contraseña tiene que cumplir un montón de cosas, suerte.</p>
             <label class="input-label" for="name">Nombre artístico</label>
             <input id="name" class="input-text" placeholder="NOMBRE ARTÍSTICO" type="text" />
-            <label class="input-label" for="bio">BIOGRAFÍA</label>
+            <label class="input-label" for="bio">Biografia</label>
             <textarea placeholder="ESCRIBE UNA PEQUEÑA BIOGRAFÍA DE TI" class="text-area" name="bio" id="bio" cols="" rows=""></textarea>
+            <label class="input-label image" for="image">Imagen</label>
+            <image-input id="image"  name="image"/>
           
           </fielset>
         </form>
@@ -84,11 +86,15 @@
   </div>
 </template>
 <script>
+import DaInputFile from '../components/Forms/InputFile/InputFile'
 export default {
   name: "register",
   data: () => ({
     step: 1
   }),
+  components:{
+    'image-input': DaInputFile
+  },
   methods: {
     next() {
       if (this.step < 3) {
@@ -138,7 +144,9 @@ export default {
       margin-top: -24px;
       margin-bottom: 32px;
     }
-
+    .input-label.image{
+      margin-top: 32px;
+    }
     .container-btn {
       display: flex;
       width: calc((100%/6)*4);

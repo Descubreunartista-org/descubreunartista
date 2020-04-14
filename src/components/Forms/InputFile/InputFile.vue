@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-input">
     <div class="wrapper">
       <input
         class="input-visible"
@@ -109,17 +109,20 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.container-input {
   overflow: hidden;
 }
 .wrapper {
   position: relative;
+  margin-bottom: 1rem;
 }
 .input-visible {
   min-height: 72px;
   border: solid 1px var(--text-color);
-  width: 100%;
+  width: 99%;
   color: var(--text-color);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 .input-visible::placeholder {
   color: var(--link-text-hover);
